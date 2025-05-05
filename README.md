@@ -86,7 +86,7 @@ Heart-Disease-Prediction-Model/
 
 _Examples:_
 
-![Image](https://github.com/user-attachments/assets/034bf39e-6430-4967-9000-58981eda5b27)
+![Image](https://github.com/user-attachments/assets/546c737f-6115-4c2d-991c-7bf3b856e372)
 
 ![Image](https://github.com/user-attachments/assets/d15d9e65-a01e-4dcd-b31d-4c3aeceecf5e)
 
