@@ -10,13 +10,12 @@ def load_model():
     Loads the pre-trained Gradient Boosting model from the .pkl file using pickle.
     """
     try:
-        # Load the model file using pickle
-        # Note the new file name: 'cardio_gradient_boost_pickle.pkl'
-        with open('cardio_gradient_boost_pickle.pkl', 'rb') as f:
+        # We are now loading the new, converted file
+        with open('cardio_compatible_model.pkl', 'rb') as f:
             model = pickle.load(f)
         return model
     except FileNotFoundError:
-        st.error("Error: The model file 'cardio_gradient_boost_pickle.pkl' was not found. Please ensure it is in the same directory as this script.")
+        st.error("Error: The model file 'cardio_compatible_model.pkl' was not found. Please ensure it is in the same directory as this script.")
         st.stop()
     except Exception as e:
         st.error(f"An error occurred while loading the model: {e}")
