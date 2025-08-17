@@ -1,6 +1,5 @@
-# Import necessary libraries
 import streamlit as st
-import joblib
+import pickle
 import pandas as pd
 import numpy as np
 
@@ -8,16 +7,16 @@ import numpy as np
 @st.cache_resource
 def load_model():
     """
-    Loads the pre-trained Gradient Boosting model from the .pkl file.
-    Note: The file 'cardio_gradient_boost.pkl' should be in the same
-    directory as this script.
+    Loads the pre-trained Gradient Boosting model from the .pkl file using pickle.
     """
     try:
-        # Load the new model file
-        model = joblib.load('cardio_gradient_boost.pkl')
+        # Load the model file using pickle
+        # Note the new file name: 'cardio_gradient_boost_pickle.pkl'
+        with open('cardio_gradient_boost_pickle.pkl', 'rb') as f:
+            model = pickle.load(f)
         return model
     except FileNotFoundError:
-        st.error("Error: The model file 'cardio_gradient_boost.pkl' was not found. Please ensure it is in the same directory as this script.")
+        st.error("Error: The model file 'cardio_gradient_boost_pickle.pkl' was not found. Please ensure it is in the same directory as this script.")
         st.stop()
     except Exception as e:
         st.error(f"An error occurred while loading the model: {e}")
@@ -255,6 +254,3 @@ if st.button("Predict Cardiovascular Disease", use_container_width=True, type="p
 
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
-
-
-
